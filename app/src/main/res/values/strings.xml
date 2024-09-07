@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My App1</string>
+    <string name="click_the_button_to_change_the_image">Click the button to change the image</string>
+    <string name="change_image">Change Image</string>
+</resources>

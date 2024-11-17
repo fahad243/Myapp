@@ -2,4 +2,8 @@
     <string name="app_name">My App1</string>
     <string name="click_the_button_to_change_the_image">Click the button to change the image</string>
     <string name="change_image">Change Image</string>
+    <string name="satisfaction_level">Satisfaction level: %1$d%%</string>
+    <string name="feedback_summary">Rating: %1$.1f\nSatisfaction Level: %2$d%%\nService was fast: %3$s\nService was friendly: %4$s\nWould recommend: %5$s</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

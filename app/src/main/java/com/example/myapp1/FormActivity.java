@@ -65,7 +65,7 @@ public class FormActivity extends AppCompatActivity {
             return;
         }
 
-        if (phoneNumber.length() != 10) {
+        if (phoneNumber.length() != 11) {
             phoneNumberEditText.setError("Enter a valid 10-digit mobile number");
             return;
         }

@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
     private Button myButton;
     private Button openFeedbackButton;
     private Button openFormButton;
+    private Button openFormList;
+    private Button openFormRecyclerView;
+
     private boolean isFirstImage = true;
 
     @Override
@@ -23,7 +26,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         initializeViews();
+
+
+        if (!areViewsValid()) {
+            throw new RuntimeException("One or more UI components are missing in the layout file.");
+        }
+
+
         setOnClickListeners();
     }
 
@@ -33,18 +44,43 @@ public class MainActivity extends AppCompatActivity {
         myButton = findViewById(R.id.myButton);
         openFeedbackButton = findViewById(R.id.openfeedbackButton);
         openFormButton = findViewById(R.id.openformButton);
+        openFormList = findViewById(R.id.openformList);
+        openFormRecyclerView = findViewById(R.id.openformRecyclerView);
+    }
+
+    private boolean areViewsValid() {
+        return myTextView != null &&
+                myImageView != null &&
+                myButton != null &&
+                openFeedbackButton != null &&
+                openFormButton != null &&
+                openFormList != null;
     }
 
     private void setOnClickListeners() {
+
         myButton.setOnClickListener(v -> toggleImage());
+
 
         openFeedbackButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, FeedBackActivity.class);
             startActivity(intent);
         });
 
+
         openFormButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, FormActivity.class);
+            startActivity(intent);
+        });
+
+
+        openFormList.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
+            startActivity(intent);
+        });
+
+        openFormRecyclerView.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
             startActivity(intent);
         });
     }

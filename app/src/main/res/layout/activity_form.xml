@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center"
+    android:background="@drawable/background"
     tools:context=".FormActivity">
 
 
@@ -78,6 +79,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Submit"
-        android:backgroundTint="@android:color/holo_blue_light"
+        android:backgroundTint="#E91E63"
         android:textColor="@android:color/white" />
 </LinearLayout>

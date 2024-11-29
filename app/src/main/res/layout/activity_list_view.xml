@@ -4,98 +4,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="#F5F5F5">
+    android:background="@drawable/background"
+    android:padding="16dp">
 
-
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editTextItem"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Manage Items"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#1E88E5"
-        android:layout_marginBottom="16dp"
+        android:hint="Enter Item"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/itemNameInputLayout"
+    <EditText
+        android:id="@+id/editTextDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Item Name"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleText">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextItem"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:paddingHorizontal="12dp"
-            android:textColor="#000000"
-            android:textColorHint="#808080" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/descriptionInputLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Description"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/itemNameInputLayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextDescription"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:paddingHorizontal="12dp"
-            android:textColor="#000000"
-            android:textColorHint="#808080" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/addButton"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:text="Add Item"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
+        android:hint="Enter Description"
+        android:padding="12dp"
         android:layout_marginTop="12dp"
-        app:cornerRadius="12dp"
-        android:backgroundTint="#1E88E5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/descriptionInputLayout" />
+        app:layout_constraintTop_toBottomOf="@id/editTextItem" />
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/searchViewContainer"
-        android:layout_width="0dp"
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Search Items"
+        android:text="Add Item"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addButton">
+        app:layout_constraintTop_toBottomOf="@id/editTextDescription" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/searchView"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:paddingHorizontal="12dp"
-            android:textColor="#000000"
-            android:textColorHint="#808080" />
-    </com.google.android.material.textfield.TextInputLayout>
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:queryHint="Search items"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addButton" />
 
     <ExpandableListView
         android:id="@+id/expandableListView"
@@ -104,12 +60,11 @@
         android:divider="@android:color/darker_gray"
         android:dividerHeight="0.5dp"
         android:groupIndicator="@null"
-        android:layout_marginTop="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/searchViewContainer"
-        android:background="#FFFFFF"
-        android:elevation="4dp" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchView"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
